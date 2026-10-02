@@ -21,8 +21,6 @@ function getComputerChoice(){
     return choice;
 }
 
-console.log(`Computer choice is ${getComputerChoice()}`)
-
 //Function to Get Users choice and return it
 function getHumanChoice(){
     //initialite choice and set it to equal an empty string
@@ -32,10 +30,11 @@ function getHumanChoice(){
     //Return choice
     return choice;
 }
-console.log(`Humans choice is ${getHumanChoice()}`)
+
 //Create 2 Variables to store the players score (humanScore) and the computers score (computerScore) and initiliate them to 0
 let humanScore = 0;
 let computerScore = 0;
+
 //Function that takes the human and computers choice as arguments and compares them to see who wins and then increments the score of whoever won and rounds played
 function playRound (humanChoice, computerChoice){
     //set the human and computer choice to lowercase 
@@ -45,50 +44,50 @@ function playRound (humanChoice, computerChoice){
     //if choice is same declare tie and dont increment score, log to console that it was a tie and what the choice was
     if (humanChoice === computerChoice) {
         console.log(`It is a tie! You both chose ${humanChoice}.`);
+        return;
     }
     //if human choice is rock and computer choice is paper, log to console that they lose and increment computer score
     if (humanChoice === 'rock' && computerChoice === 'paper'){
         console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
         computerScore++;
-        return computerScore;
+        return;
     }
     //if human choice is paper and computer choice is scissors, log to console that they lose and increment computer score
     if (humanChoice === 'paper' && computerChoice === 'scissors') {
         console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
         computerScore++;
-        return computerScore;
+        return;
     }
     //if human choice is scissors and computer choice is rock, log to console that they lose and increment computer score
     if (humanChoice === 'scissors' && computerChoice === 'rock'){
         console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
         computerScore++;
-        return computerScore;
+        return;
     }
     //if human choice is rock and computer choice is scissors, log to console that they win and increment human score
     if (humanChoice === 'rock' && computerChoice === 'scissors'){
         console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
         humanScore++;
-        return humanScore;
+        return;
     }
     //if human choice is paper and computer choice is rock, log to console that they win and increment human score
     if (humanChoice === 'paper' && computerChoice === 'rock'){
         console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
         humanScore++;
-        return humanScore;
+        return;
     }
     //if human choice is scissors and computer choice is paper, log to console that they win and increment human score
     if (humanChoice === 'scissors' && computerChoice === 'paper'){
         console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
         humanScore++;
-        return humanScore;
+        return;
     }
 }
-playRound(getHumanChoice(), getComputerChoice());
 
 //Function that calls playRound 5 times and declares the overall winner after
 function playGame(){
     //create a loop to play a round 5 times
-    for (let i = 1; i >= 5; i++){
+    for (let i = 1; i <= 5; i++){
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`Amount of rounds played ${i}.`)
     }
@@ -98,7 +97,7 @@ function playGame(){
         console.log(`You are the overall winner! Your score is ${humanScore} and the opponents score is ${computerScore}.`)
     }
     //If the computers score is higher tell the player they lost and display scores
-    else if (humanScre < computerScore){
+    else if (humanScore < computerScore){
         console.log(`You lost overall. Your score is ${humanScore} and the opponents score is ${computerScore}.`)
     }
     //If both scores are the same declare tie and display scores.
@@ -108,3 +107,4 @@ function playGame(){
     
 }
 
+playGame();
