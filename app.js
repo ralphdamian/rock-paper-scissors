@@ -88,7 +88,7 @@ playRound(getHumanChoice(), getComputerChoice());
 //Function that calls playRound 5 times and declares the overall winner after
 function playGame(){
     //create a loop to play a round 5 times
-    for (let i = 1; i <= 5; i++){
+    for (let i = 1; i >= 5; i++){
         playRound(getHumanChoice(), getComputerChoice());
         console.log(`Amount of rounds played ${i}.`)
     }
@@ -107,3 +107,4 @@ function playGame(){
     }
     
 }
+
