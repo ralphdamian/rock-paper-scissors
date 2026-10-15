@@ -44,7 +44,7 @@ function updateScore(humanScore, computerScore){
     cpuScore.textContent = `Computer Score: ${computerScore}`;
     playerScore.textContent = `Player Score: ${humanScore}`;
 }
-
+// set the scoreboard to 0 on page load
 updateScore(0, 0);
 
 //Function that takes the human and computers choice as arguments and compares them to see who wins and then increments the score of whoever won and rounds played
@@ -91,6 +91,9 @@ function playRound (humanChoice, computerChoice){
         // incremement computers score
         computerScore++;
 
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+
         return;
     }
     //if human choice is paper and computer choice is scissors, log to console that they lose and increment computer score
@@ -110,6 +113,9 @@ function playRound (humanChoice, computerChoice){
         // increment computers score
         computerScore++;
 
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+
         return;
     }
     //if human choice is scissors and computer choice is rock, log to console that they lose and increment computer score
@@ -128,6 +134,10 @@ function playRound (humanChoice, computerChoice){
 
         // increment computers score
         computerScore++;
+
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+
         return;
     }
     //if human choice is rock and computer choice is scissors, log to console that they win and increment human score
@@ -147,6 +157,9 @@ function playRound (humanChoice, computerChoice){
         // increment the players score
         humanScore++;
 
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+
         return;
     }
     //if human choice is paper and computer choice is rock, log to console that they win and increment human score
@@ -165,6 +178,10 @@ function playRound (humanChoice, computerChoice){
         
         // increment the players score
         humanScore++;
+
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+
         return;
     }
     //if human choice is scissors and computer choice is paper, log to console that they win and increment human score
@@ -183,6 +200,10 @@ function playRound (humanChoice, computerChoice){
         
         // increment the players score
         humanScore++;
+
+        // update the scoreboard 
+        updateScore(humanScore, computerScore);
+        
         return;
     }
 }
