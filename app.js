@@ -83,28 +83,44 @@ function playRound (humanChoice, computerChoice){
         return;
     }
 }
+// select each button choice and assign it to a variable
+const btnRock = document.querySelector("#btn-rock");
+const btnPaper = document.querySelector("#btn-paper");
+const btnScissors = document.querySelector("#btn-scissors");
 
-//Function that calls playRound 5 times and declares the overall winner after
-function playGame(){
-    //create a loop to play a round 5 times
-    for (let i = 1; i <= 5; i++){
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(`Amount of rounds played ${i}.`)
-    }
-    //Check who's score is larger and declare a winner
-    //if the players score is higher tell the player they wont and display scores.
-    if (humanScore > computerScore) {
-        console.log(`You are the overall winner! Your score is ${humanScore} and the opponents score is ${computerScore}.`)
-    }
-    //If the computers score is higher tell the player they lost and display scores
-    else if (humanScore < computerScore){
-        console.log(`You lost overall. Your score is ${humanScore} and the opponents score is ${computerScore}.`)
-    }
-    //If both scores are the same declare tie and display scores.
-    else{
-        console.log(`The game is a tie. Your score is ${humanScore} and the opponents score is ${computerScore}.`)
-    }
+// add an event listener to each button that calls play round and passes in the users choice
+btnRock.addEventListener("click", () => {
+    playRound("rock", getComputerChoice())
+});
+btnPaper.addEventListener("click", () => {
+    playRound("paper", getComputerChoice())
+});
+btnScissors.addEventListener("click", () => {
+    playRound("scissors", getComputerChoice())
+});
+
+
+// //Function that calls playRound 5 times and declares the overall winner after
+// function playGame(){
+//     //create a loop to play a round 5 times
+//     for (let i = 1; i <= 5; i++){
+//         playRound(getHumanChoice(), getComputerChoice());
+//         console.log(`Amount of rounds played ${i}.`)
+//     }
+//     //Check who's score is larger and declare a winner
+//     //if the players score is higher tell the player they wont and display scores.
+//     if (humanScore > computerScore) {
+//         console.log(`You are the overall winner! Your score is ${humanScore} and the opponents score is ${computerScore}.`)
+//     }
+//     //If the computers score is higher tell the player they lost and display scores
+//     else if (humanScore < computerScore){
+//         console.log(`You lost overall. Your score is ${humanScore} and the opponents score is ${computerScore}.`)
+//     }
+//     //If both scores are the same declare tie and display scores.
+//     else{
+//         console.log(`The game is a tie. Your score is ${humanScore} and the opponents score is ${computerScore}.`)
+//     }
     
-}
+// }
 
-playGame();
+// playGame();
