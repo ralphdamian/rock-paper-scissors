@@ -40,45 +40,136 @@ function playRound (humanChoice, computerChoice){
     //set the human and computer choice to lowercase 
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
+
+    // Select the results div for appending results to
+    const divResults = document.querySelector("#results");
+
     //Compare humanChoices to computerChoices
     //if choice is same declare tie and dont increment score, log to console that it was a tie and what the choice was
     if (humanChoice === computerChoice) {
-        console.log(`It is a tie! You both chose ${humanChoice}.`);
+        // assign the result of the round to a variable
+        const result = `It is a tie! You both chose ${humanChoice}.`;
+
+        //create a p element
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+
         return;
     }
-    //if human choice is rock and computer choice is paper, log to console that they lose and increment computer score
+
+    //if human choice is rock and computer choice is paper, and increment computer score
     if (humanChoice === 'rock' && computerChoice === 'paper'){
-        console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
+        // assign the result of the round to a variable
+        const result = `You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`;
+
+        //create a p element
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+
+        // incremement computers score
         computerScore++;
+
         return;
     }
     //if human choice is paper and computer choice is scissors, log to console that they lose and increment computer score
     if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
+        // assign the result of the round to a variable
+        const result = `You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`;
+
+        // create a p element,  and then append it to div.results
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+
+        // increment computers score
         computerScore++;
+
         return;
     }
     //if human choice is scissors and computer choice is rock, log to console that they lose and increment computer score
     if (humanChoice === 'scissors' && computerChoice === 'rock'){
-        console.log(`You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`);
+        // assign the result of the round to a variable
+        const result = `You Lose! You chose ${humanChoice} and the opponent chose ${computerChoice}`;
+
+        // create a p element,  and then append it to div.results
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+
+        // increment computers score
         computerScore++;
         return;
     }
     //if human choice is rock and computer choice is scissors, log to console that they win and increment human score
     if (humanChoice === 'rock' && computerChoice === 'scissors'){
-        console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
+        // assign the result of the round to a variable named result
+        const result = `You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`;
+
+        //create a p element, assign the textContent to display the result and then append it to div.results
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+        
+        // increment the players score
         humanScore++;
+
         return;
     }
     //if human choice is paper and computer choice is rock, log to console that they win and increment human score
     if (humanChoice === 'paper' && computerChoice === 'rock'){
-        console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
+        // assign the result of the round to a variable named result
+        const result = `You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`;
+
+        //create a p element, assign the textContent to display the result and then append it to div.results
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+        
+        // increment the players score
         humanScore++;
         return;
     }
     //if human choice is scissors and computer choice is paper, log to console that they win and increment human score
     if (humanChoice === 'scissors' && computerChoice === 'paper'){
-        console.log(`You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`)
+        // assign the result of the round to a variable named result
+        const result = `You Win! You chose ${humanChoice}, and the opponent chose ${computerChoice}`;
+
+        //create a p element, assign the textContent to display the result and then append it to div.results
+        const para = document.createElement("p");
+
+        // assign the textContent to result
+        para.textContent = result;
+
+        // append the paragraph to div#results
+        divResults.appendChild(para);
+        
+        // increment the players score
         humanScore++;
         return;
     }
