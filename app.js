@@ -34,6 +34,18 @@ function getHumanChoice(){
 //Create 2 Variables to store the players score (humanScore) and the computers score (computerScore) and initiliate them to 0
 let humanScore = 0;
 let computerScore = 0;
+// Create a function that updates the score of each player
+function updateScore(humanScore, computerScore){
+    // select h2#computer-score and h2#player-score and assign to variable
+    const cpuScore = document.querySelector("#computer-score");
+    const playerScore = document.querySelector("#player-score");
+
+    // update textContent to new values
+    cpuScore.textContent = `Computer Score: ${computerScore}`;
+    playerScore.textContent = `Player Score: ${humanScore}`;
+}
+
+updateScore(0, 0);
 
 //Function that takes the human and computers choice as arguments and compares them to see who wins and then increments the score of whoever won and rounds played
 function playRound (humanChoice, computerChoice){
